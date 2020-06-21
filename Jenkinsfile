@@ -10,6 +10,11 @@ pipeline {
                '''
       }
     }
+    stage('Lint HTML') {
+      steps {
+        sh 'tidy -q -e *.html'
+      }
+    }
     stage('Test') {
       steps {
         sh 'echo "Hello WorldAgain"'
